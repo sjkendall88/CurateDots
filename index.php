@@ -19,6 +19,8 @@
                 Show Dots: <input type="text" name="user" value="" />
                 <input type="submit" value="Go" />
             </form>
+            <br>Still Don't have a wish list?! <a href="createNewAccount.php">Create Now</a>
+            
         </body>
     </html>
 </DOCTYPE>
