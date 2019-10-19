@@ -5,6 +5,8 @@ To change this template file, choose Tools | Templates
 and open the template in the editor.
 -->
 <?php
+require_once ("Includes/db.php");
+
 /** database connection credentials */
 $dbHost="localhost";
 $dbUsername="phpuser";
@@ -28,26 +30,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
     
     /** Create database connection */
-
-    $con = mysqli_connect($dbHost, $dbUsername, $dbPassword);
-    if (!$con) {
-        exit('Connect Error (' . mysqli_connect_errno() . ') '
-                . mysqli_connect_error());
-    }
-//set the default client character set 
-    mysqli_set_charset($con, 'utf-8');
+    $curatorID = CuratorDB::getInstance()->get_curator_id_by_name($_POST["user"]);
     
-    /**set the default client character set */ 
-    mysqli_set_charset($con, 'utf-8');
-   /** Check whether a user whose name matches the "user" field already exists */
-
-    mysqli_select_db($con, "curatedots");
-    $user = mysqli_real_escape_string($con, $_POST["fName"]);
-    $curator = mysqli_query($con, "SELECT curator_id FROM curator WHERE first_name='".$user."';");
-    $curatorIDnum = mysqli_num_rows($curator);
-    if ($curatorIDnum) {
-        $userNameIsUnique = false;
-    }
     
     //Password Validation?
     if ($_POST["password"]=="") {
@@ -65,12 +49,8 @@ if ($_POST["password"]!=$_POST["password2"]) {
      * After adding the new entry, close the connection and redirect the application to editWishList.php.
      */
     if (!$userIsEmpty && $userNameIsUnique && !$passwordIsEmpty && !$password2IsEmpty && $passwordIsValid) {
-        $password = mysqli_real_escape_string($con, $_POST['password']);
-        mysqli_select_db($con, "curatedots");
-        mysqli_query($con, "INSERT curator (first_name, password) VALUES ('" . $user . "', '" . $password . "')");
-        mysqli_free_result($curator);
-        mysqli_close($con);
-        header('Location: editDotList.php');
+        CuratorDB::getInstance()->create_curator($_POST["user"], $_POST["password"]);
+        header('Location: createNewAccount.php');
         exit;
     }
 }
