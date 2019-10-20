@@ -29,10 +29,10 @@ class CuratorDB extends mysqli {
     // The clone and wakeup methods prevents external 
     // instantiation of copies of the single thus 
     // eliminating the possibility of duplicate objects.
-    public function _clone(){
+    public function __clone(){
         trigger_error('Clone is not allowed.', E_USER_ERROR);
     }
-    public function _wakeup(){
+    public function __wakeup(){
         trigger_error('Deserializing is not allowed.', E_USER_ERROR);
     }
     
@@ -61,7 +61,7 @@ class CuratorDB extends mysqli {
         }
     }
     
-    public function get_dots_by_curator_id($curaterID) {
+    public function get_dots_by_curator_id($curatorID) {
         return $this->query("SELECT dots_name, dots_description FROM dots WHERE curator_id ='" .$curatorID . "';");
     }
     

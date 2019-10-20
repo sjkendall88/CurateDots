@@ -23,7 +23,7 @@ $password2IsEmpty = false;
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     /** Check that the page was requested from itself via the POST method. */
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
-/** Check whether the user has filled in the Curator's name in the text field "user" */    
+    /** Check whether the user has filled in the Curator's name in the text field "user" */    
         if ($_POST["fName"]=="") {
         $userIsEmpty = true;
         }
@@ -36,15 +36,20 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     //Password Validation?
     if ($_POST["password"]=="") {
     $passwordIsEmpty = true;
-}
-if ($_POST["password2"]=="") {
+    }
+    if ($_POST["password2"]=="") {
     $password2IsEmpty = true;
-}
-if ($_POST["password"]!=$_POST["password2"]) {
+    }
+    if ($_POST["password"]!=$_POST["password2"]) {
     $passwordIsValid = false;
-} 
+    }
+    
+    $curatorID = CuratorDB::getInstance()->get_curator_id_by_name($_POST["user"]);
+    if ($curatorID) {
+        $userNameIsUnique = false;
+    }
 
-/** Check whether the boolean values show that the input data was validated successfully.
+    /** Check whether the boolean values show that the input data was validated successfully.
      * If the data was validated successfully, add it as a new entry in the "wishers" database.
      * After adding the new entry, close the connection and redirect the application to editWishList.php.
      */
