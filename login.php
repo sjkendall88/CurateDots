@@ -33,14 +33,14 @@ and open the template in the editor.
                 <th>Description</th>
             </tr>
             <?php
-                require_once("Includes/db.php");
+                // require_once("Includes/db.php");
                 $result = CuratorDB::getInstance()->get_dots_by_curator_id($curatorID);
                 
                 while ($row = mysqli_fetch_array($result)) {
                     echo "<tr><td>" . htmlentities($row["dots_name"]) . "</td>";
                     echo "<td>" . htmlentities($row["dots_description"]) . "</td></tr>\n";
                 }
-                mysqli_free_result($result);
+                oci_free_statement($result);
             ?>
         </table>
 

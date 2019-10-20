@@ -37,7 +37,7 @@ class CuratorDB extends mysqli {
     }
     
     // private constructor
-    private function __construct(){
+    public function __construct(){
         parent::__construct($this->dbhost, $this->user, $this->pass, $this->dbName);
         if (mysqli_connect_error()) {
             exit('Connect Error (' . mysqli_connect_errno() . ')' . mysqli_connect_error());
@@ -51,7 +51,7 @@ class CuratorDB extends mysqli {
         /* @var $name type */
         $name = $this->real_escape_string($name);
         
-        $curator = $this->query("SELECT curator_id FROM curator WHERE name = '" . $name . "';");
+        $curator = $this->query("SELECT curator_id FROM curator WHERE first_name = '" . $name . "';");
         
         if ($curator->num_rows > 0) {
             $row = $curator->fetch_row();
@@ -62,7 +62,7 @@ class CuratorDB extends mysqli {
     }
     
     public function get_dots_by_curator_id($curaterID) {
-        return $this->query("SELECT dots_name, dots_description FROM dots WHERE curator_id =" .$curatorID . ";");
+        return $this->query("SELECT dots_name, dots_description FROM dots WHERE curator_id ='" .$curatorID . "';");
     }
     
     Public function create_curator($name, $password) {

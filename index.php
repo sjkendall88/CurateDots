@@ -15,7 +15,7 @@
             ?>
             <h4>Test title after php</h4>
             
-            <form name="login" action="login.php">
+            <form name="login" method="GET" action="login.php">
                 Show Dots: <input type="text" name="user" value="" />
                 <input type="submit" value="Go" />
             </form>
