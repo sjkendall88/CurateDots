@@ -11,9 +11,9 @@ and open the template in the editor.
         <title></title>
     </head>
     <body>
-        Wish List of: 
-            <?php 
-                echo htmlentities($_GET["user"])."<br>"; 
+        Wish List of:
+            <?php
+                echo htmlentities($_GET["user"])."<br>";
             ?>
         <?php
         require_once("Includes/db.php");
@@ -22,10 +22,10 @@ and open the template in the editor.
             if (!$curatorID) {
                 exit("The person " . $_GET["user"] . " is not found. Please check the spelling and try again.");
             }
-            
-            
+
+
                     ?>
-        
+
         <!-- Create output table for Dots -->
         <table border="black">
             <tr>
@@ -35,12 +35,12 @@ and open the template in the editor.
             <?php
                 // require_once("Includes/db.php");
                 $result = CuratorDB::getInstance()->get_dots_by_curator_id($curatorID);
-                
+
                 while ($row = mysqli_fetch_array($result)) {
                     echo "<tr><td>" . htmlentities($row["dots_name"]) . "</td>";
                     echo "<td>" . htmlentities($row["dots_description"]) . "</td></tr>\n";
                 }
-                oci_free_statement($result);
+                mysqli_free_result($result);
             ?>
         </table>
 

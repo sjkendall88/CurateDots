@@ -66,11 +66,17 @@ class CuratorDB extends mysqli {
     }
     
     Public function create_curator($name, $password) {
+        $name = $this->real_escape_string($name);
+        $password = $this->real_escape_string($password);
+        $this->query("INSERT INTO curator (first_name, password) VALUES ('" . $name . "', '" . $password . "');");
+
+        /*
         $query = "INSERT INTO curator (first_name, password) VALUES (:user_bv, :pwd_bv)";
         $stid = oci_parse($this->con, $query);
         oci_bind_by_name($stid, ':user_bv', $query);
         oci_bind_by_name($stid, ':pwd_bv', $query);
         oci_execute($stid);
+        */
     }
     
     
