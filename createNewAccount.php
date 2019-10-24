@@ -55,7 +55,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
      */
     if (!$userIsEmpty && $userNameIsUnique && !$passwordIsEmpty && !$password2IsEmpty && $passwordIsValid) {
         CuratorDB::getInstance()->create_curator($_POST["user"], $_POST["password"]);
-        header('Location: createNewAccount.php');
+        session_start();
+        $_SESSION['user'] = $_POST['user'];
+        header('Location: editDotList.php');
         exit;
     }
 }
