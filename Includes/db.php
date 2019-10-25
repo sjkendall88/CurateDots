@@ -69,8 +69,21 @@ class CuratorDB extends mysqli {
         $name = $this->real_escape_string($name);
         $password = $this->real_escape_string($password);
         $this->query("INSERT INTO curator (first_name, password) VALUES ('" . $name . "', '" . $password . "');");
-
     }
     
+    public function verify_curator_credentials($name, $password){
+        $name = $this->real_escape_string($name);
+        $password = $this->real_escape_string($password);
+        $query = "SELECT 1 FROM curator WHERE first_name ='".$name."' and password ='".$password."';";
+        $result = $this->query($query);
+        return $result->data_seek(0);
+    }
     
+    public function insert_dot($curatorID, $dot_name, $dot_description){
+        $dots_name = $this->real_escape_string($dot_name);
+        $dots_description = $this->real_escape_string($dot_description);
+        $query = "INSERT INTO dots (dots_id, dots_name, dots_discription, curator_id) "
+                . "VALUES (NULL,'".$dots_name."','".$dots_description."',".$curatorID.");";
+        $this->query($query);
+    }
 }

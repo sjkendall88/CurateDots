@@ -5,9 +5,9 @@ $logonSuccess = false;
 // Verify user's credentials
 if ($_SERVER['REQUEST_METHOD'] == "POST"){
     $logonSuccess = (CuratorDB::getInstance()->verify_curator_credentials($_POST['username'], $_POST['password']));
-    if ($logonSuccess == TRUE) {
+    if ($logonSuccess == true) {
         session_start();
-        $_SESSION['user'] = $_POST['user'];
+        $_SESSION['user'] = $_POST['username'];
         header('Location: editDotList.php');
         exit;
     }
