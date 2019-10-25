@@ -48,4 +48,10 @@ if ($_SERVER['REQUEST_METHOD'] == "POST"){
             <input type="submit" name="back" value="Back to the List"/>
         </form>
     </body>
+    <FOOTER>
+            <?php
+                $cwd = getcwd();
+                include($cwd.'/includes/toMain.php');
+            ?>
+        </FOOTER>
 </html>

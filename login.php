@@ -45,4 +45,10 @@ and open the template in the editor.
         </table>
 
     </body>
+    <FOOTER>
+            <?php
+                $cwd = getcwd();
+                include($cwd.'/includes/toMain.php');
+            ?>
+        </FOOTER>
 </html>

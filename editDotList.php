@@ -37,4 +37,10 @@ and open the template in the editor.
             <br><input type="submit" value="Add Dot">
         </form>
     </body>
+    <FOOTER>
+            <?php
+                $cwd = getcwd();
+                include($cwd.'/includes/toMain.php');
+            ?>
+        </FOOTER>
 </html>

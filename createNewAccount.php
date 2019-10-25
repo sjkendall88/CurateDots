@@ -105,4 +105,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <input type="submit" value="Register"/>
         </form>
     </body>
+    <FOOTER>
+            <?php
+                $cwd = getcwd();
+                include($cwd.'/includes/toMain.php');
+            ?>
+        </FOOTER>
 </html>
