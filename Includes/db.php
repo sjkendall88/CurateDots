@@ -49,9 +49,9 @@ class CuratorDB extends mysqli {
     // This should be after wish DB function...MIA
     public function get_curator_id_by_name($name) {
         /* @var $name type */
-        $name = $this->real_escape_string($name);
+        $iName = $this->real_escape_string($name);
         
-        $curator = $this->query("SELECT curator_id FROM curator WHERE first_name = '" . $name . "';");
+        $curator = $this->query("SELECT curator_id FROM curator WHERE first_name = '" . $iName . "';");
         
         if ($curator->num_rows > 0) {
             $row = $curator->fetch_row();
@@ -66,9 +66,9 @@ class CuratorDB extends mysqli {
     }
     
     Public function create_curator($name, $password) {
-        $name = $this->real_escape_string($name);
-        $password = $this->real_escape_string($password);
-        $this->query("INSERT INTO curator (first_name, password) VALUES ('" . $name . "', '" . $password . "');");
+        $iName = $this->real_escape_string($name);
+        $iPassword = $this->real_escape_string($password);
+        $this->query("INSERT INTO curator (first_name, password) VALUES ('" . $iName . "', '" . $iPassword . "');");
     }
     
     public function verify_curator_credentials($name, $password){
@@ -82,8 +82,8 @@ class CuratorDB extends mysqli {
     public function insert_dot($curatorID, $dot_name, $dot_description){
         $dotI_name = $this->real_escape_string($dot_name);
         $dotI_description = $this->real_escape_string($dot_description);
-        $query = "INSERT INTO dots (dots_id, dots_name, dots_discription, curator_id) "
-                . "VALUES (NULL,'".$dotI_name."','".$dotI_description."',".$curatorID.");";
+        $query = "INSERT INTO dots (dots_name, dots_description, curator_id) "
+                . "VALUES ('".$dotI_name."','".$dotI_description."',".$curatorID.");";
         $this->query($query);
     }
 }
