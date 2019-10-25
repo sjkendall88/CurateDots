@@ -8,17 +8,17 @@ if (!array_key_exists("user", $_SESSION)) {
 require_once 'Includes/db.php';
 $curatorID = CuratorDB::getInstance()->get_curator_id_by_name($_SESSION['user']);
 
-$dotDescriptionIsEmpty = false;
+$dotNameIsEmpty = false;
 if ($_SERVER['REQUEST_METHOD'] == "POST"){
     if(array_key_exists("back", $_POST)){
         header('Location: editDotList.php');
         exit;
     } else {
         if ($_POST['dots_Name'] == ""){
-            $dotDescriptionIsEmpty = true;
+            $dotNameIsEmpty = true;
         } else {
-            CuratorDB::getInstance()->insert_dot($_POST['dots_name'], 
-                    $_POST['dots_description'], $curatorID);
+            CuratorDB::getInstance()->insert_dot($curatorID, $_POST['dots_Name'], 
+                    $_POST['dots_Description']);
             header('Location: editDotList.php');
             exit;
         }
@@ -42,7 +42,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST"){
             Dot Name: <input type="text" name="dots_Name"  value="" /><br/>
             Describe your dot: <input type="text" name="dots_Description" value=""/><br/>
             <?php
-                if ($dotDescriptionIsEmpty) echo 'Please enter Dot name<br>';
+                if ($dotNameIsEmpty) echo 'Please enter Dot name<br>';
             ?>
             <input type="submit" name="saveDot" value="Save Changes"/>
             <input type="submit" name="back" value="Back to the List"/>
