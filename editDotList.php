@@ -21,16 +21,27 @@ and open the template in the editor.
     <body>
         <h3>Edit Dot Page</h3>
         <table border="black">
-    <tr><th>Item</th><th>Due Date</th></tr>
+    <tr><th>Dot</th><th>Description</th></tr>
     <?php
     require_once("Includes/db.php");
     $curatorID = CuratorDB::getInstance()->get_curator_id_by_name($_SESSION["user"]);
     $result = CuratorDB::getInstance()->get_dots_by_curator_id($curatorID);
 
-                while ($row = mysqli_fetch_array($result)) {
+                while ($row = mysqli_fetch_array($result)) :
                     echo "<tr><td>" . htmlentities($row["dots_name"]) . "</td>";
-                    echo "<td>" . htmlentities($row["dots_description"]) . "</td></tr>\n";
-                }               
+                    echo "<td>" . htmlentities($row["dots_description"]) . "</td>";
+                    $dotID = $row["dots_id"];               
+    ?>
+    <td>
+        <form name="editDot" action="editDot.php" method="GET">
+            <input type="hidden" name="dot_ID" value="<?php echo $dotID; ?>">
+            <input type="submit" name="editDot" value="Edit">
+        </form>
+    </td>
+    <?php 
+    echo "</tr>\n";
+    endwhile;
+    mysqli_free_result($result);
     ?>
 </table>
         <form action="editDot.php" name="addNewDot">

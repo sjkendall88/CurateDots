@@ -62,7 +62,12 @@ class CuratorDB extends mysqli {
     }
     
     public function get_dots_by_curator_id($curatorID) {
-        return $this->query("SELECT dots_name, dots_description FROM dots WHERE curator_id ='" .$curatorID . "';");
+        return $this->query("SELECT dots_id, dots_name, dots_description FROM dots WHERE curator_id ='" .$curatorID . "';");
+    }
+    
+    public function get_dots_by_dots_id($dotID){
+        $query = "SELECT dots_id, dots_name, dots_description FROM dots WHERE dots_id = ". $dotID . ";";
+        return $this->query($query);
     }
     
     Public function create_curator($name, $password) {
@@ -84,6 +89,12 @@ class CuratorDB extends mysqli {
         $dotI_description = $this->real_escape_string($dot_description);
         $query = "INSERT INTO dots (dots_name, dots_description, curator_id) "
                 . "VALUES ('".$dotI_name."','".$dotI_description."',".$curatorID.");";
+        $this->query($query);
+    }
+    
+    public function update_dot($dotID, $dot_name, $dot_description){
+        $descriptionI = $this->real_escape_string($description);
+        $query = "UPDATE dots SET dots_name = '". $dot_name . "', dots_description = '". $dot_description . "' WHERE dots_ID ='" . $dotID . "';";
         $this->query($query);
     }
 }
