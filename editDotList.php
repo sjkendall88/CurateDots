@@ -38,6 +38,12 @@ and open the template in the editor.
             <input type="submit" name="editDot" value="Edit">
         </form>
     </td>
+    <td>
+        <form name="deleteDot" action="deleteDot.php" method="POST">
+            <input type="hidden" name="dot_ID" value="<?php echo $dotID; ?>">
+            <input type="submit" name="deleteDot" value="Delete">
+        </form>
+    </td>
     <?php 
     echo "</tr>\n";
     endwhile;

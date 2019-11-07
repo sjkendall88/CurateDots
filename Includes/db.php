@@ -94,7 +94,12 @@ class CuratorDB extends mysqli {
     
     public function update_dot($dotID, $dot_name, $dot_description){
         $descriptionI = $this->real_escape_string($description);
-        $query = "UPDATE dots SET dots_name = '". $dot_name . "', dots_description = '". $dot_description . "' WHERE dots_ID ='" . $dotID . "';";
+        $query = "UPDATE dots SET dots_name = '". $dot_name . "', dots_description = '". $dot_description . "' WHERE dots_id ='" . $dotID . "';";
+        $this->query($query);
+    }
+    
+    public function delete_dot($dotID){
+        $query = "DELETE FROM dots WHERE dots_id ='". $dotID . "';";
         $this->query($query);
     }
 }
