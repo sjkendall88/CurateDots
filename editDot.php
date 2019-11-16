@@ -17,12 +17,12 @@ if ($_SERVER['REQUEST_METHOD'] == "POST"){
         $dotNameIsEmpty = true;
     } else if($_POST['dot_id'] == "") {
         CuratorDB::getInstance()->insert_dot($curatorID, $_POST['dot_name'], 
-                $_POST['dot_Description']);
+                $_POST['dot_description']);
         header('Location: editDotList.php');
         exit;
     } elseif ($_POST['dot_id'] != "") {
         CuratorDB::getInstance()->update_dot($_POST['dot_id'], $_POST['dot_name'], 
-                $_POST['dot_Description']);
+                $_POST['dot_description']);
         header('Location: editDotList.php');
         exit;
     }
