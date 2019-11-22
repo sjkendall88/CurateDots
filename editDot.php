@@ -33,8 +33,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST"){
  * and open the template in the editor.
  */
 ?>
-<!DOCTYPE HTML>
-
+<!DOCTYPE html>
 <html>
     <head>
 
