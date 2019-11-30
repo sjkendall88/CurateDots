@@ -1,0 +1,229 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Nov 30, 2019, 1:26:38 PM
+    Author     : Sterling Kendall
+*/
+#mail {
+    width: 45px;
+    height: 45px;
+    background: url(../images/iStock.png) 0 0;  
+}
+
+#power {
+width: 45px;
+    height: 45px;
+    background: url(../images/iStock.png) -46px 0;
+}
+
+#home {
+  width: 45px;
+    height: 45px;
+    background: url(../images/iStock.png) -91px 0;
+}
+
+#timer {
+  width: 45px;
+    height: 45px;
+    background: url(../images/iStock.png) -138px 0;  
+}
+
+#phone {
+  width: 45px;
+    height: 45px;
+    background: url(../images/iStock.png) -184px 0; 
+}
+
+#lock {
+  width: 45px;
+    height: 45px;
+    background: url(../images/iStock.png) -225px 0;  
+}
+
+/* Second Row of Images */
+#wifi {
+  width: 45px;
+    height: 45px;
+    background: url(../images/iStock.png) 0 -46px;  
+}
+
+#search {
+  width: 45px;
+    height: 45px;
+    background: url(../images/iStock.png) -46px -46px;  
+}
+
+#security {
+  width: 45px;
+    height: 45px;
+    background: url(../images/iStock.png) -91px -46px;  
+}
+
+#noCircle {
+  width: 45px;
+    height: 45px;
+    background: url(../images/iStock.png) -138px -46px;  
+}
+
+#smsBuble {
+  width: 45px;
+    height: 45px;
+    background: url(../images/iStock.png) -184px -46px;  
+}
+
+#star {
+  width: 45px;
+    height: 45px;
+    background: url(../images/iStock.png) -225px -46px;  
+}
+
+/* Third Row of Images */
+#notification {
+ width: 45px;
+    height: 45px;
+    background: url(../images/iStock.png) 0 -91px;  
+}
+
+#fire {
+  width: 45px;
+    height: 45px;
+    background: url(../images/iStock.png) -46px -91px;  
+}
+
+#checkMark {
+  width: 45px;
+    height: 45px;
+    background: url(../images/iStock.png) -91px -91px;  
+}
+
+#cancelX {
+  width: 45px;
+    height: 45px;
+    background: url(../images/iStock.png) -138px -91px;  
+}
+
+#heart {
+  width: 45px;
+    height: 45px;
+    background: url(../images/iStock.png) -184px -91px;  
+}
+
+#plus {
+  width: 45px;
+    height: 45px;
+    background: url(../images/iStock.png) -225px -91px;  
+}
+
+/* Fourth Row of Images */
+#bars {
+  width: 45px;
+    height: 45px;
+    background: url(../images/iStock.png) 0 -138px;  
+}
+
+#bagage {
+  width: 45px;
+    height: 45px;
+    background: url(../images/iStock.png) -46px -138px;  
+}
+
+#leftArrow {
+  width: 45px;
+    height: 45px;
+    background: url(../images/iStock.png) -91px -138px;  
+}
+
+#rightArrow {
+  width: 45px;
+    height: 45px;
+    background: url(../images/iStock.png) -138px -138px;  
+}
+
+#upArrow {
+  width: 45px;
+    height: 45px;
+    background: url(../images/iStock.png) -184px -138px;  
+}
+
+#downArrow {
+  width: 45px;
+    height: 45px;
+    background: url(../images/iStock.png) -225px -138px;  
+}
+
+/* Fifth Row of Images */
+#interGlobe {
+  width: 45px;
+    height: 45px;
+    background: url(../images/iStock.png) 0 -184px;  
+}
+
+#barGraph {
+  width: 45px;
+    height: 45px;
+    background: url(../images/iStock.png) -46px -184px;  
+}
+
+#play {
+  width: 45px;
+    height: 45px;
+    background: url(../images/iStock.png) -91px -184px;  
+}
+
+#pause {
+  width: 45px;
+    height: 45px;
+    background: url(../images/iStock.png) -138px -184px;  
+}
+
+#stop {
+  width: 45px;
+    height: 45px;
+    background: url(../images/iStock.png) -184px -184px;  
+}
+
+#record {
+  width: 45px;
+    height: 45px;
+    background: url(../images/iStock.png) -225px -184px;  
+}
+
+/* Sixth Row of Images */
+#rewind {
+  width: 45px;
+    height: 45px;
+    background: url(../images/iStock.png) 0 -225px;  
+}
+
+#fastForward {
+  width: 45px;
+    height: 45px;
+    background: url(../images/iStock.png) -46px -225px;  
+}
+
+#prevTrack {
+  width: 45px;
+    height: 45px;
+    background: url(../images/iStock.png) -91px -225px;  
+}
+
+#nexTrack {
+  width: 45px;
+    height: 45px;
+    background: url(../images/iStock.png) -138px -225px;  
+}
+
+#undo {
+  width: 45px;
+    height: 45px;
+    background: url(../images/iStock.png) -184px -225px; 
+}
+
+#redo {
+  width: 45px;
+    height: 45px;
+    background: url(../images/iStock.png) -225px -225px; 
+}

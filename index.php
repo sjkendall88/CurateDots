@@ -23,6 +23,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST"){
             <link rel="stylesheet" href="CSS/cssMed.css"/>
             <link rel="stylesheet" href="CSS/css"/>
             <link href="CSS/normalization.css" rel="stylesheet">
+            <link href="CSS/imageSheet.css" rel="stylesheet">
         </head>
 
         <body>

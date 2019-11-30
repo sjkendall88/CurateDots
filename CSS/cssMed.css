@@ -14,13 +14,27 @@ header {
 }
 
 #logo{
-    grid-column: 2;
-    max-height: 5rem;
-    max-width: 5rem;
+    grid-column: 2/5;
+    max-height: none;
+    max-width: none;    
 }
 
-#siteTitle {
-    grid-column: 3/5;
+#logo > * {
+    display:inline;
+}
+
+#imNav {
+    grid-column: 6/10;    
+}
+
+#curLogin {
+    grid-row: 2;
+    grid-column: 7/10;
+}
+
+#dotSearch {
+    grid-row: 2;
+    grid-column: 4/7;
 }
 
 #createAccount{
