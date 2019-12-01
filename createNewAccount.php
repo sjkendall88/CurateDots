@@ -65,9 +65,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <title>Add New User Account</title>
     </head>
     <body>
-        <?php
-        // put your code here
-        ?>
+        <?php include 'includes/header.php'; ?>
         <form action="createNewAccount.php" method="POST">
             First Name: <input type="text" name="fName"/><br>
              <?php

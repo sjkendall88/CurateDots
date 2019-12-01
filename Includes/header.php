@@ -16,7 +16,7 @@
     </form>
     </section>    
     <section id="curLogin">
-        <form name="Login" style="display:inline;" action="index.php" method="post">
+        <form id="loginGrid" name="Login" action="index.php" method="post">
         <?php
             if($_SERVER["REQUEST_METHOD"] == "POST"){
                 if (!$logonSuccess){
@@ -24,15 +24,18 @@
                 }
             }
         ?>
-            Username:
-            
-            Password:
-            <br>
-                    <input type="text" name="username" placeholder="username">
-            <input type="password" name="password">
-            <br>
-        <input type="submit" value="Login">
-        <input type="submit" formaction="createNewAccount.php" value="Create Curator">
+            <section class="col1">
+                Username:
+                <br><input type="text" name="username" placeholder="username">
+            </section>
+            <section class="col2">
+                Password:
+                <br><input type="password" name="password">
+            </section>
+            <section class="col3">
+                <input type="submit" value="Login">
+            <input type="submit" formaction="createNewAccount.php" value="Create Curator">
+            </section>
         <a href="" name="forgot password">Forgot Password</a>
     </form>
     </section>

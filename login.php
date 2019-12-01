@@ -2,6 +2,7 @@
         <title>Search Results</title>
     </head>
     <body>
+        <?php include 'includes/header.php'; ?>
         Wish List of:
             <?php
                 echo htmlentities($_GET["user"])."<br>";

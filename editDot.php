@@ -46,6 +46,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST"){
                 "dots_description" => ""); 
         }
         ?>
+        <?php include 'includes/header.php'; ?>
         <h3>Welcome <?php echo $_SESSION['user']?> add new Dot Details</h3>
         <form name="editDot" action="editDot.php" method="POST">
             <input type="hidden" name="dot_id" value="<?php echo $dot["dots_id"];?>" />

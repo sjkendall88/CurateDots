@@ -13,6 +13,7 @@
         <title>Welcome</title>
     </head>
     <body>
+        <?php include 'includes/header.php'; ?>
         <h3><?php echo $_SESSION['user']?>'s Dot Page</h3>
         <table border="black">
     <tr><th>Dot</th><th>Description</th></tr>
