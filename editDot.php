@@ -27,17 +27,10 @@ if ($_SERVER['REQUEST_METHOD'] == "POST"){
         exit;
     }
     }
-/* 
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 ?>
-<!DOCTYPE html>
-<html>
-    <head>
 
-       <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<?php include 'includes/top.php'; ?>
+<title>Add New Dot</title>
     </head>
     <body>
         <?php 
@@ -53,6 +46,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST"){
                 "dots_description" => ""); 
         }
         ?>
+        <h3>Welcome <?php echo $_SESSION['user']?> add new Dot Details</h3>
         <form name="editDot" action="editDot.php" method="POST">
             <input type="hidden" name="dot_id" value="<?php echo $dot["dots_id"];?>" />
             Dot Name: <input type="text" name="dot_name"  value="<?php echo $dot["dots_name"];?>" /><br/>

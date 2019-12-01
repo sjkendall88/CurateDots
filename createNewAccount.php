@@ -61,10 +61,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 }
 ?>
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="UTF-8">
+<?php include 'includes/top.php'; ?>
         <title>Add New User Account</title>
     </head>
     <body>
