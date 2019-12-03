@@ -29,7 +29,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST"){
     }
 ?>
 
-<?php include 'includes/top.php'; ?>
+<?php include 'Includes/top.php'; ?>
 <title>Add New Dot</title>
     </head>
     <body>
@@ -46,7 +46,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST"){
                 "dots_description" => ""); 
         }
         ?>
-        <?php include 'includes/header.php'; ?>
+        <?php include 'Includes/header.php'; ?>
         <h3>Welcome <?php echo $_SESSION['user']?> add new Dot Details</h3>
         <form name="editDot" action="editDot.php" method="POST">
             <input type="hidden" name="dot_id" value="<?php echo $dot["dots_id"];?>" />
@@ -62,9 +62,6 @@ if ($_SERVER['REQUEST_METHOD'] == "POST"){
         </form>
     </body>
     <FOOTER>
-            <?php
-                $cwd = getcwd();
-                include($cwd.'/includes/toMain.php');
-            ?>
+            <?php include 'Includes/toMain.php';?>
         </FOOTER>
 </html>

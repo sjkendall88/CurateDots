@@ -1,22 +1,20 @@
-<?php include 'includes/top.php'; ?>
+<?php include 'Includes/top.php'; ?>
         <title>Search Results</title>
     </head>
     <body>
-        <?php include 'includes/header.php'; ?>
+        <?php include 'Includes/header.php'; ?>
         Wish List of:
             <?php
                 echo htmlentities($_GET["user"])."<br>";
             ?>
         <?php
-        require_once("Includes/db.php");
+        require_once("includes/db.php");
             // Make connection to database
             $curatorID = CuratorDB::getInstance()->get_curator_id_by_name($_GET["user"]);
             if (!$curatorID) {
                 exit("The person " . $_GET["user"] . " is not found. Please check the spelling and try again.");
             }
-
-
-                    ?>
+            ?>
 
         <!-- Create output table for Dots -->
         <table border="black">
@@ -39,8 +37,7 @@
     </body>
     <FOOTER>
             <?php
-                $cwd = getcwd();
-                include($cwd.'/includes/toMain.php');
+                include 'Includes/toMain.php';
             ?>
         </FOOTER>
 </html>

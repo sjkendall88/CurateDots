@@ -1,8 +1,3 @@
-<!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
--->
 <?php
 require_once ("Includes/db.php");
 
@@ -30,7 +25,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     
     /** Create database connection */
     $curatorID = CuratorDB::getInstance()->get_curator_id_by_name($_POST["fName"]);
-    
     
     //Password Validation?
     if ($_POST["password"]=="") {
@@ -61,11 +55,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 }
 ?>
-<?php include 'includes/top.php'; ?>
+<?php include 'Includes/top.php'; ?>
         <title>Add New User Account</title>
     </head>
     <body>
-        <?php include 'includes/header.php'; ?>
+        <?php include 'Includes/header.php'; ?>
         <form action="createNewAccount.php" method="POST">
             First Name: <input type="text" name="fName"/><br>
              <?php
@@ -101,9 +95,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         </form>
     </body>
     <FOOTER>
-            <?php
-                $cwd = getcwd();
-                include($cwd.'/includes/toMain.php');
-            ?>
+            <?php include 'Includes/toMain.php'; ?>
         </FOOTER>
 </html>

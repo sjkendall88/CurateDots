@@ -31,7 +31,7 @@ width: 45px;
     background: url(../images/iStock.png) -138px 0;  
 }
 
-#phone {
+#userFrame {
   width: 45px;
     height: 45px;
     background: url(../images/iStock.png) -184px 0; 
@@ -68,7 +68,7 @@ width: 45px;
     background: url(../images/iStock.png) -138px -46px;  
 }
 
-#smsBuble {
+#smsBubble {
   width: 45px;
     height: 45px;
     background: url(../images/iStock.png) -184px -46px;  
@@ -161,7 +161,7 @@ width: 45px;
     background: url(../images/iStock.png) 0 -184px;  
 }
 
-#barGraph {
+#logOut {
   width: 45px;
     height: 45px;
     background: url(../images/iStock.png) -46px -184px;  
