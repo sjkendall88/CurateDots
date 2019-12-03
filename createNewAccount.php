@@ -29,7 +29,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
     
     /** Create database connection */
-    $curatorID = CuratorDB::getInstance()->get_curator_id_by_name($_POST["user"]);
+    $curatorID = CuratorDB::getInstance()->get_curator_id_by_name($_POST["fName"]);
     
     
     //Password Validation?
@@ -43,7 +43,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $passwordIsValid = false;
     }
     
-    $curatorID = CuratorDB::getInstance()->get_curator_id_by_name($_POST["user"]);
+    $curatorID = CuratorDB::getInstance()->get_curator_id_by_name($_POST["fName"]);
     if ($curatorID) {
         $userNameIsUnique = false;
     }
@@ -53,9 +53,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
      * After adding the new entry, close the connection and redirect the application to editWishList.php.
      */
     if (!$userIsEmpty && $userNameIsUnique && !$passwordIsEmpty && !$password2IsEmpty && $passwordIsValid) {
-        CuratorDB::getInstance()->create_curator($_POST["user"], $_POST["password"]);
+        CuratorDB::getInstance()->create_curator($_POST["fName"], $_POST["lName"], $_POST["password"]);
         session_start();
-        $_SESSION['user'] = $_POST['user'];
+        $_SESSION['user'] = $_POST['fName'];
         header('Location: editDotList.php');
         exit;
     }

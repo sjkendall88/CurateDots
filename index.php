@@ -13,16 +13,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST"){
     }
 }
 ?>
-<!DOCTYPE html>
-    <html>
-        <head>
-            <meta charset="utf-8">
-            <meta name="viewport" content="width=device-width, initial-scale=1">
-            <link rel="stylesheet" href="CSS/cssSmall.css"/>
-            <link rel="stylesheet" href="CSS/cssMed.css"/>
-            <link rel="stylesheet" href="CSS/css"/>
-            <link href="CSS/normalization.css" rel="stylesheet">
-            <link href="CSS/imageSheet.css" rel="stylesheet">
+<?php include 'includes/top.php'; ?>
             <title>CurateDots</title>
         </head>
 

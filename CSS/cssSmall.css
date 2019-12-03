@@ -10,6 +10,7 @@ and open the template in the editor.
 *{
     box-sizing: border-box;
     font-family: 'Open Sans', sans-serif;
+    background-color: silver;
 }
 
 header > img {

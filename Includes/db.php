@@ -70,10 +70,11 @@ class CuratorDB extends mysqli {
         return $this->query($query);
     }
     
-    Public function create_curator($name, $password) {
-        $iName = $this->real_escape_string($name);
+    Public function create_curator($fName, $lName, $password) {
+        $ifName = $this->real_escape_string($fName);
+        $ilName = $this->real_escape_string($lName);
         $iPassword = $this->real_escape_string($password);
-        $this->query("INSERT INTO curator (first_name, password) VALUES ('" . $iName . "', '" . $iPassword . "');");
+        $this->query("INSERT INTO curator (first_name, last_name, password) VALUES ('" . $ifName . "', '" . $ilName . "', '" . $iPassword . "');");
     }
     
     public function verify_curator_credentials($name, $password){
