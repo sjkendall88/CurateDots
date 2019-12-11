@@ -13,6 +13,10 @@ and open the template in the editor.
     background-color: silver;
 }
 
+body {
+        margin: 1% 5%;
+}
+
 header > img {
     max-width: 5rem;
 }
@@ -35,8 +39,8 @@ header > img {
 
 input{
     width: auto;
-    min-width: 4rem;
-    max-width: 12rem;
+    min-width: 1rem;
+    max-width: 8rem;
     border-width: 3px;
     border-color: dodgerblue;
     border-radius: 5rem 5rem;
@@ -44,15 +48,15 @@ input{
 }
 
 form > input[type=text] {
-    width: au;
-    min-width: 2rem;
-    max-width: 12rem;
+    width: auto;
+    min-width: 1rem;
+    max-width: 8rem;
 }
 
 input[type=button], input[type=submit], input[type=reset] {
     width: auto;
+    min-width: 1rem;
     max-width: 12rem;
-    min-width: 4rem;
     border-width: 3px;
     border-color: dodgerblue;
     border-radius: 5rem 5rem;

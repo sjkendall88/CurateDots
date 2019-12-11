@@ -8,6 +8,11 @@ and open the template in the editor.
     Author     : Sterling Kendall
 */
 @media only screen and (min-width: 35rem){
+    
+    body {
+        margin: 1% 5%;
+}
+
 header {
     display: grid;
     grid-template-columns: 5% 10% 15% 10% 10% 10% 10% 10% 15% 5%;
